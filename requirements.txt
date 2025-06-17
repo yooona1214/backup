@@ -1,0 +1,12 @@
+torch==2.1.2
+transformers==4.37.0
+accelerate
+peft
+bitsandbytes
+scipy
+gradio
+openai
+datasets
+sentencepiece
+protobuf==3.20.*
+

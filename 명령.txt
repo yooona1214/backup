@@ -1,0 +1,19 @@
+# 처음 컨테이너 생성
+docker run --gpus all -it \
+  -v $(pwd)/Magma:/app/Magma \
+  --name magma-run \
+  magma-image
+
+# 컨테이너 나가기
+exit
+
+# 컨테이너 재시작
+sudo docker start -ai magma-run
+
+
+# 컨테이너 떠 있는지 확인
+docker ps -a
+
+# 컨테이너 이미지를 tar파일로 저장
+docker save -o magma-backup.tar magma-backup-image
+docker load -i magma-backup.tar

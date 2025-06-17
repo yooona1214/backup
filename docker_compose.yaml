@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  magma-dev:
+    image: magma-dev
+    container_name: magma-dev-run
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    volumes:
+      - ./Magma:/workspace
+    working_dir: /workspace
+    command: bash
+    tty: true
+    stdin_open: true
+
